@@ -80,7 +80,7 @@ bool Serialize_single::Deserialize(const char *pFilePath)
 
 int main()
 {
-    int flag1;
+    int flag1; //完成标识
     {
         Serialize_single cal;
         cal.show_member();
