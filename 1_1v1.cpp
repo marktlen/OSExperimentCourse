@@ -86,6 +86,5 @@ int main()
     cal.f();
     flag1 = cal.Serialize("data");
     std::cout << "serialize return:" << flag1 << std::endl;
-    //TODO 新建文件无法正常关闭，导致写入空白
     return 0;
 }
