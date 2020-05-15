@@ -39,7 +39,7 @@ void CA_LL::f(void)
 bool CA_LL::Serialize(const char *pFilePath)
 {
 
-    int fd = open(pFilePath, O_RDWR | O_CREAT | O_TRUNC); //输出到文件
+    int fd = open(pFilePath, O_RDWR | O_CREAT | O_TRUNC , S_IRUSR | S_IWUSR); //输出到文件
     
     if (fd == -1) //检查打开是否正确
     {
