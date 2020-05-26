@@ -214,7 +214,7 @@ bool multi_memberSerialize::multiSerialize(const char *pFilePath, std::vector<Se
         if (fwrite(&sereds[i].nType, sizeof(int), 1, fp) <= 0)
         {
             fclose(fp);
-            std::cout << "read error!" << std::endl;
+            std::cout << "write error!" << std::endl;
             return false;
         }
         if (sereds[i].nType == TYPE_A)
