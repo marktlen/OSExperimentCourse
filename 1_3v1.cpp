@@ -195,7 +195,7 @@ multi_memberSerialize::~multi_memberSerialize()
 /**
  * @brief 多个类的序列化
  * @param pFilePath 需要保持的文件名及路径
- * @param clMembers 实例化SerializeSingle类的数组
+ * @param clMembers 传入需要序列化的序列化数据结构体的数组
  * 
  * @return 是否完成
  */
@@ -249,7 +249,7 @@ bool multi_memberSerialize::multiSerialize(const char *pFilePath, std::vector<Se
 /**
  * @brief 多个类的反序列化
  * @param pFilePath 需要保持的文件名及路径
- * @param clMembers 用于存储的SerializeSingle类的数组
+ * @param clMembers 用于存储的反序列化产生数据结构体的数组
  * 
  * @return 是否完成
  */
