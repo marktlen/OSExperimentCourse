@@ -50,7 +50,7 @@ bool Recursive(char *path, int depth)
         stat(ptr->d_name, &stat_buf);          // 获取文件信息，把信息放到s_buf中
         memcpy(curr_path, path, sizeof(path)); // 获取当前文件路径
         /* 判断是不是文件夹 */
-        if (S_ISDIR(stat_buf.st_mode) > 0) //是一个文件夹
+        if (S_ISDIR(stat_buf.st_mode)) //是一个文件夹
         {
             /* 手动处理文件夹路径 */
             strcat(curr_path, "/");
@@ -59,7 +59,7 @@ bool Recursive(char *path, int depth)
             std::cout << curr_path << std::endl; // 打印当前文件夹名
             Recursive(curr_path, depth + 1);     // 递归当前文件夹，深度加1
         }
-        else if (S_ISDIR(stat_buf.st_mode) == 0) // 是个文件
+        else if (!S_ISDIR(stat_buf.st_mode) == 0) //不是个文件夹
         {
             // 为了美化打印效果打印效果，增强层次感
             if (depth >= 1)
