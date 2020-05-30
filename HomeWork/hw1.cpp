@@ -11,7 +11,7 @@ int main()
     char const *str = "1234567890abc";
     char *readFileStr;
     // 读写打开，没有就创建
-    int fd = open("work1Doc.txt", O_RDWR | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
+    int fd = open("work1Doc.txt", O_RDWR | O_CREAT | O_APPEND, S_IRUSR | S_IWUSR);
     if (-1 == fd) //打开错误判断
     {
         cout << "open error" << endl;
@@ -58,7 +58,7 @@ int main()
         return 0;
     }
     system("cat work1Doc.txt"); //读取打印当前字符串
-    cout << "\t'P' is replaced the first letter"<<endl;
+    cout << "\t'P' is append follow the doc"<<endl;
     close(fd);
     return 0;
 }
