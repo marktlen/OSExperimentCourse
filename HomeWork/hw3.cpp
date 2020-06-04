@@ -82,8 +82,8 @@ bool showDirecoryList(char *path)
             continue;
         }
 
-        stat(ptr->d_name, &stat_buf);          // 获取文件信息，把信息放到s_buf中
-        memcpy(curr_path, path, sizeof(path)); // 获取当前文件路径
+        stat(ptr->d_name, &stat_buf);              // 获取文件信息，把信息放到s_buf中
+        memcpy(curr_path, path, strlen(path) + 1); // 获取当前文件路径
         /* 判断是不是文件夹 */
         if (S_ISDIR(stat_buf.st_mode)) //是一个文件夹
         {
@@ -163,8 +163,8 @@ int counterSubdirtectory(char *path)
             continue;
         }
 
-        stat(ptr->d_name, &stat_buf);          // 获取文件信息，把信息放到s_buf中
-        memcpy(curr_path, path, sizeof(path)); // 获取当前文件路径
+        stat(ptr->d_name, &stat_buf);              // 获取文件信息，把信息放到s_buf中
+        memcpy(curr_path, path, strlen(path) + 1); // 获取当前文件路径
         /* 判断是不是文件夹 */
         if (S_ISDIR(stat_buf.st_mode)) //是一个文件夹
         {
