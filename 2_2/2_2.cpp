@@ -11,7 +11,7 @@ int main(void)
 
     DIR *dir;                          //目录流对象的数据类型指针
     struct dirent *ptr;                //目录项结构体指针
-    char *path = (char *)"./pulgin";   //open directory pulgin
+    char *path = (char *)"./plugin";   //open directory plugin
     char curr_path[MAX_D_NAME_LENGTH]; // current directory
 
     dir = opendir(path); //open directory
@@ -19,7 +19,7 @@ int main(void)
     // chack if the directory exists
     if (dir == NULL)
     {
-        std::cout << "There's not exist directory called pulgin" << std::endl;
+        std::cout << "There's not exist directory called plugin" << std::endl;
     }
 
     while ((ptr = readdir(dir)) != NULL)
