@@ -13,11 +13,26 @@ Experiment 1
 
 Experiment 2
 
-- Experiment [2.1](/2_1)
-- Experiment [2.2](/2_2)
+- [Experiment 2.1](/2_1)
+- [Experiment 2.2](/2_2)
 
 HomeWork
 
 - [HomeWork1](HomeWork/hw1.cpp)
 - [HomeWork2](HomeWork/hw2.cpp)
 - [HomeWork3](HomeWork/hw3.cpp)
+
+## Common console commands
+
+动态库的编写
+
+```bash
+g++ -fpic -shared -o libtest.so a1.cpp a2.cpp
+```
+
+生成libtest.so文件
+动态库使用者的编译
+
+```bash
+g++ -o test test.cpp –ldl
+```
