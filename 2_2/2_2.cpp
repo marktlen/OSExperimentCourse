@@ -24,13 +24,13 @@ int main(void)
 
     while ((ptr = readdir(dir)) != NULL)
     {
-        memcpy(curr_path, path, strlen(path) + 1); // 获取当前文件路径
         if (ptr->d_name[0] == '.')
         {
             //剔除隐藏文件和文件自身，保证文件隐藏和打印效果
             continue;
         }
         /* 手动处理文件夹路径 */
+        memcpy(curr_path, path, strlen(path) + 1); // 获取当前文件路径
         strcat(curr_path, "/");
         strcat(curr_path, ptr->d_name);
 
