@@ -68,7 +68,6 @@ bool SerializeSingle::deserialize(FILE *fp)
 {
     if (fread(&member, sizeof(member), 1, fp) <= 0) //写入序列化i，并判断写是否成功
     {
-        std::cout << "read error!" << std::endl;
         return false;
     }
     return true;
@@ -155,7 +154,7 @@ bool multi_memberSerialize::demultiSerialize(const char *pFilePath, std::vector<
         flag = clSer.deserialize(fp);
         if (flag == false)
         {
-            std::cout << "total:" << i << " " << std::flush; //报告返回位置
+            std::cout << "total:" << i << " " << std::endl; //报告返回位置
             break;
         }
         else
