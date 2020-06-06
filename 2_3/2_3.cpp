@@ -80,9 +80,9 @@ bool dlFunctionHook(string path, char *op)
     // 映射动态链接库中printStr的函数原型
     Fun funPrintStr = (Fun)dlsym(handle, op);
 
-    if (funPrintStr == 0)
+    if (funPrintStr == NULL)
     {
-        std::cout << "Fun PrintStr error" << std::endl;
+        std::cout << "Fun " << op << " error" << std::endl;
         std::cout << dlerror() << std::endl; //查看出错原因
         return false;
     }
