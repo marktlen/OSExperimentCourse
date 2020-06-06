@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 {
     if (argc != 2) //需要给出调用参数
     {
-        std::cout << "need follow operation:" << std::endl;
+        std::cout << "Most used commands:" << std::endl;
         std::cout << "\thelp" << std::endl;
         std::cout << "\t[FuncID]" << std::endl;
         return 0;
@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
  */
 bool dlFunctionHook(string path, char *op)
 {
-    //以类方式打开当前目录下的文件libPrint.so
+    //延迟函数的调用绑定插件目录下的文件
     void *handle = dlopen(path.c_str(), RTLD_LAZY);
 
     if (handle == NULL) //检测动态链接是否成功

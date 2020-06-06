@@ -1,7 +1,7 @@
-#include <iostream>
 #include <fcntl.h>
-#include <vector>
+#include <iostream>
 #include <unistd.h>
+#include <vector>
 
 using namespace std;
 
@@ -312,8 +312,8 @@ int main(void)
         //实例化两个A，两个B
         TypeAs a1(1);
         Serialized s1;
-        s1.nType = TYPE_A;
-        s1.pObj = &a1;
+        s1.nType = TYPE_A; //设置类型标识
+        s1.pObj = &a1;     //设置类成员变量头指针
 
         TypeBs b1(2, 3);
         Serialized s2;

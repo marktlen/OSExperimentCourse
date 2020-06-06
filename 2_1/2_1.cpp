@@ -4,9 +4,9 @@
 
 int main(void)
 {
-    // 以类方式打开当前目录下的文件libPrint.so
+    // 延迟函数的调用绑定文件libPrint.so
     void *handle = dlopen("./libPrint.so", RTLD_LAZY);
-    if (handle == 0) //检测动态链接是否成功
+    if (handle == NULL) //检测动态链接是否成功
     {
         std::cout << "dlopen error" << std::endl;
         return 0;

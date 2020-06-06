@@ -1,10 +1,14 @@
-#include <iostream>
 #include <fcntl.h>
-#include <vector>
+#include <iostream>
 #include <unistd.h>
+#include <vector>
 
 using namespace std;
 
+/**
+ * @brief 单个对象的实例化
+ * 
+ */
 class Serialize_single
 {
 private:
@@ -12,17 +16,17 @@ private:
     int member;
 
 public:
-    Serialize_single(/* args */);
+    Serialize_single();
     ~Serialize_single();
 
-    void show_member(); //接口告知
+    void show_member(); //打印内容
 
     //int member;
     bool Serialize(const char *pFilePath);
     bool Deserialize(const char *pFilePath);
 };
 
-Serialize_single::Serialize_single(/* args */)
+Serialize_single::Serialize_single()
 {
     member = 1016; // last four digits of my student number
 }
@@ -36,6 +40,13 @@ void Serialize_single::show_member(void)
     std::cout << "member:" << member << std::endl;
 }
 
+/**
+ * @brief 序列化到文件中
+ * 
+ * @param pFilePath 文件路径
+ * @return true 成功
+ * @return false 错误
+ */
 bool Serialize_single::Serialize(const char *pFilePath)
 {
     FILE *fp;                                  //文件指针
@@ -57,6 +68,13 @@ bool Serialize_single::Serialize(const char *pFilePath)
     return true;
 }
 
+/**
+ * @brief 从文件中反序列化
+ * 
+ * @param pFilePath 文件路径
+ * @return true 成功
+ * @return false 失败
+ */
 bool Serialize_single::Deserialize(const char *pFilePath)
 {
     FILE *fp;                                 //文件指针

@@ -34,7 +34,7 @@ int main(void)
         strcat(curr_path, "/");
         strcat(curr_path, ptr->d_name);
 
-        //以类方式打开当前目录下的文件libPrint.so
+        //延迟函数的调用绑定插件目录下的文件
         void *handle = dlopen(curr_path, RTLD_LAZY);
 
         if (handle == NULL) //检测动态链接是否成功
