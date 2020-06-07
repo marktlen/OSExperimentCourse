@@ -30,6 +30,8 @@ Experiment 2
   - 通过命令行方式：./a.out FuncID，调用具体打印功能
 - [Experiment 2.4](/2_4)
   - 将三个导出函数都放在一个类中，让插件外部获取该类的对象
+- [Experiment 2.5](/2_5)
+  - 用虚接口实现插件调用和实例化
 
 HomeWork
 

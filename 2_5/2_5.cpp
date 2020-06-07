@@ -1,5 +1,5 @@
 #include "PluginController.h"
-#include "PluginEnumerator.h"
+//#include "PluginEnumerator.h"
 #include <iostream>
 #include <string.h>
 #include <vector>
@@ -37,7 +37,6 @@ int main(int argc, char *argv[])
     else //the input is not allow
     {
         printCommandsError();
-        return 0;
     }
 
     return 0;
