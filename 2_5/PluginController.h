@@ -1,9 +1,8 @@
 #ifndef CPLUGINCONTROLLER_H
 #define CPLUGINCONTROLLER_H
 
+#include "IPrintPlugin.h"
 #include <vector>
-
-class IPrintPlugin;
 
 class PluginController
 {
@@ -18,7 +17,7 @@ public:
     bool InitializeController(void);   //初始化控制类
     bool UninitializeController(void); //反初始化控制类
 
-    bool ProcessHelp(void);              //调用Help函数|
+    bool ProcessHelp(void);              //调用Help函数
     bool ProcessRequest(int FunctionID); //调用对应FUNID的函数
 };
 
