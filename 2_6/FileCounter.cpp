@@ -67,15 +67,13 @@ int main(int argc, char *argv[])
 
         if (functionID >= 0 && fileID >= 0) // cheak input number in bounds
         {
-            //printf("pass!");
-            //std::cout << fileEnum.vfilePaths[0] << std::endl;
             pluginControl.ProcessRequest(functionID, fileEnum.vfilePaths[fileID].c_str()); // 请求调用对应ID的函数
             pluginControl.UninitializeController();                                        // 释放插件控制类占用
         }
-        // else //the input not allow
-        // {
-        //     printCommandsError();
-        // }
+        else //the input not allow
+        {
+            printCommandsError();
+        }
     }
 
     return 0;

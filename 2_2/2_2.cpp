@@ -22,7 +22,7 @@ int main(void)
         std::cout << "There's not exist directory called plugin" << std::endl;
     }
 
-    while ((ptr = readdir(dir)) != NULL)
+    while ((ptr = readdir(dir)) != NULL) //循环遍历，直到目录项为空
     {
         if (ptr->d_name[0] == '.')
         {
@@ -31,8 +31,8 @@ int main(void)
         }
         /* 手动处理文件夹路径 */
         memcpy(curr_path, path, strlen(path) + 1); // 获取当前文件路径
-        strcat(curr_path, "/");
-        strcat(curr_path, ptr->d_name);
+        strcat(curr_path, "/");                    // 加斜杠
+        strcat(curr_path, ptr->d_name);            // 加文件名
 
         //延迟函数的调用绑定插件目录下的文件
         void *handle = dlopen(curr_path, RTLD_LAZY);

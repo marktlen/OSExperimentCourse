@@ -20,6 +20,7 @@ int main(void)
     {
         std::cout << "Fun PrintStr error" << std::endl;
         std::cout << dlerror() << std::endl; //查看出错原因
+        return 0;
     }
 
     (*funPrintStr)(); // 用函数指针调用函数
